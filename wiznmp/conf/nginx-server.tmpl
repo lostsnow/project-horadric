@@ -1,0 +1,27 @@
+server
+{
+    listen ${data['ngx_srv_port']};
+    server_name ${data['ngx_srv_name']};
+    index index.html index.htm index.php;
+    root ${data['ngx_srv_root']};
+
+    location ~* \.(js|css|jpg|jpeg|gif|png|bmp|swf|htm|html|ico)$
+    {
+        expires 30d;
+    }
+
+${data['ngx_locations']}
+
+    % if data['ngx_location_php_enable']:
+    location ~ .*\.(php)?$
+    {
+        % if data['ngx_php_socket']:
+        fastcgi_pass unix:/tmp/php-fcgi.sock;
+        % else:
+        fastcgi_pass 127.0.0.1:9000;
+        % endif
+        fastcgi_index index.php;
+        include fcgi.conf;
+    }
+    % endif
+}

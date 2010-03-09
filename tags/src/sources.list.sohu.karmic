@@ -1,0 +1,21 @@
+deb http://mirrors.sohu.com/ubuntu/ karmic main restricted universe multiverse
+deb http://mirrors.sohu.com/ubuntu/ karmic-security main restricted universe multiverse
+deb http://mirrors.sohu.com/ubuntu/ karmic-updates main restricted universe multiverse
+deb http://mirrors.sohu.com/ubuntu/ karmic-proposed main restricted universe multiverse
+deb http://mirrors.sohu.com/ubuntu/ karmic-backports main restricted universe multiverse
+deb-src http://mirrors.sohu.com/ubuntu/ karmic main restricted universe multiverse
+deb-src http://mirrors.sohu.com/ubuntu/ karmic-security main restricted universe multiverse
+deb-src http://mirrors.sohu.com/ubuntu/ karmic-updates main restricted universe multiverse
+deb-src http://mirrors.sohu.com/ubuntu/ karmic-proposed main restricted universe multiverse
+deb-src http://mirrors.sohu.com/ubuntu/ karmic-backports main restricted universe multiverse
+
+deb http://archive.ubuntu.com/ubuntu/ karmic main restricted universe multiverse
+deb http://archive.ubuntu.com/ubuntu/ karmic-security main restricted universe multiverse
+deb http://archive.ubuntu.com/ubuntu/ karmic-updates main restricted universe multiverse
+deb http://archive.ubuntu.com/ubuntu/ karmic-proposed main restricted universe multiverse
+deb http://archive.ubuntu.com/ubuntu/ karmic-backports main restricted universe multiverse
+deb-src http://archive.ubuntu.com/ubuntu/ karmic main restricted universe multiverse
+deb-src http://archive.ubuntu.com/ubuntu/ karmic-security main restricted universe multiverse
+deb-src http://archive.ubuntu.com/ubuntu/ karmic-updates main restricted universe multiverse
+deb-src http://archive.ubuntu.com/ubuntu/ karmic-proposed main restricted universe multiverse
+deb-src http://archive.ubuntu.com/ubuntu/ karmic-backports main restricted universe multiverse

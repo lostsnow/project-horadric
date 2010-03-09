@@ -1,0 +1,166 @@
+<cacti>	
+	<hash_01000999914692912c03d8b213a725a432b726>
+		<name>REDHTTPresponse Content</name>
+		<ds>
+			<t_name></t_name>
+			<name>REDHTTPresponse Content</name>
+			<data_input_id>hash_030009f1a5ca91769f6d7b7f059ab036dc22c9</data_input_id>
+			<t_rra_id></t_rra_id>
+			<t_rrd_step></t_rrd_step>
+			<rrd_step>300</rrd_step>
+			<t_active></t_active>
+			<active>on</active>
+			<rra_items>hash_150009c21df5178e5c955013591239eb0afd46|hash_1500090d9c0af8b8acdc7807943937b3208e29|hash_1500096fc2d038fb42950138b0ce3e9874cc60|hash_150009e36f3adb9f152adfa5dc50fd2b23337e</rra_items>
+		</ds>
+		<items>
+			<hash_080009da5ea9cc46d50cbe535774d76b5adf5e>
+				<t_data_source_name></t_data_source_name>
+				<data_source_name>ContentLevel</data_source_name>
+				<t_rrd_minimum></t_rrd_minimum>
+				<rrd_minimum>-2</rrd_minimum>
+				<t_rrd_maximum></t_rrd_maximum>
+				<rrd_maximum>2</rrd_maximum>
+				<t_data_source_type_id></t_data_source_type_id>
+				<data_source_type_id>1</data_source_type_id>
+				<t_rrd_heartbeat></t_rrd_heartbeat>
+				<rrd_heartbeat>600</rrd_heartbeat>
+				<t_data_input_field_id></t_data_input_field_id>
+				<data_input_field_id>hash_0700097a3b57ed4feae38f223720cf8b61a25d</data_input_field_id>
+			</hash_080009da5ea9cc46d50cbe535774d76b5adf5e>
+		</items>
+		<data>
+			<item_000>
+				<data_input_field_id>hash_0700093d8db8cda625eac43afa6e287a8a931d</data_input_field_id>
+				<t_value>on</t_value>
+				<value>'test@test.com anothertest@test.com'</value>
+			</item_000>
+			<item_001>
+				<data_input_field_id>hash_07000909301ab0fe68419fd61a0081576f0854</data_input_field_id>
+				<t_value></t_value>
+				<value>yes</value>
+			</item_001>
+			<item_002>
+				<data_input_field_id>hash_0700098646ad4fe2ef286b88edd55bf80e5fd0</data_input_field_id>
+				<t_value></t_value>
+				<value>yes</value>
+			</item_002>
+			<item_003>
+				<data_input_field_id>hash_070009886fe98df8886f13a39c816523f2ca04</data_input_field_id>
+				<t_value>on</t_value>
+				<value>'<!--bottom header-->'</value>
+			</item_003>
+			<item_004>
+				<data_input_field_id>hash_070009f5d0ed9f73e05e75049c86132a0ddf76</data_input_field_id>
+				<t_value>on</t_value>
+				<value>www.test.com</value>
+			</item_004>
+			<item_005>
+				<data_input_field_id>hash_070009daeec78d46d5cb5f18c298170dd1e70a</data_input_field_id>
+				<t_value>on</t_value>
+				<value>'<!--top header-->'</value>
+			</item_005>
+		</data>
+	</hash_01000999914692912c03d8b213a725a432b726>
+	<hash_030009f1a5ca91769f6d7b7f059ab036dc22c9>
+		<name>REDHTTPresponse Content</name>
+		<type_id>1</type_id>
+		<input_string>perl &amp;lt;path_cacti&amp;gt;/scripts/REDHTTPresponse.pl &amp;lt;siteurl&amp;gt; &amp;lt;header&amp;gt; &amp;lt;footer&amp;gt; &amp;lt;log&amp;gt; &amp;lt;alert&amp;gt; &amp;lt;tosendemails&amp;gt;</input_string>
+		<fields>
+			<hash_070009daeec78d46d5cb5f18c298170dd1e70a>
+				<name>Top Header</name>
+				<update_rra></update_rra>
+				<regexp_match></regexp_match>
+				<allow_nulls></allow_nulls>
+				<type_code></type_code>
+				<input_output>in</input_output>
+				<data_name>header</data_name>
+			</hash_070009daeec78d46d5cb5f18c298170dd1e70a>
+			<hash_070009f5d0ed9f73e05e75049c86132a0ddf76>
+				<name>Web address to monitor</name>
+				<update_rra></update_rra>
+				<regexp_match></regexp_match>
+				<allow_nulls></allow_nulls>
+				<type_code></type_code>
+				<input_output>in</input_output>
+				<data_name>siteurl</data_name>
+			</hash_070009f5d0ed9f73e05e75049c86132a0ddf76>
+			<hash_070009886fe98df8886f13a39c816523f2ca04>
+				<name>Bottom Header</name>
+				<update_rra></update_rra>
+				<regexp_match></regexp_match>
+				<allow_nulls></allow_nulls>
+				<type_code></type_code>
+				<input_output>in</input_output>
+				<data_name>footer</data_name>
+			</hash_070009886fe98df8886f13a39c816523f2ca04>
+			<hash_0700097a3b57ed4feae38f223720cf8b61a25d>
+				<name>Content Level</name>
+				<update_rra>on</update_rra>
+				<regexp_match></regexp_match>
+				<allow_nulls></allow_nulls>
+				<type_code></type_code>
+				<input_output>out</input_output>
+				<data_name>ContentLevel</data_name>
+			</hash_0700097a3b57ed4feae38f223720cf8b61a25d>
+			<hash_0700098646ad4fe2ef286b88edd55bf80e5fd0>
+				<name>Log to mysql</name>
+				<update_rra></update_rra>
+				<regexp_match></regexp_match>
+				<allow_nulls></allow_nulls>
+				<type_code></type_code>
+				<input_output>in</input_output>
+				<data_name>log</data_name>
+			</hash_0700098646ad4fe2ef286b88edd55bf80e5fd0>
+			<hash_07000909301ab0fe68419fd61a0081576f0854>
+				<name>Weather or not to alert</name>
+				<update_rra></update_rra>
+				<regexp_match></regexp_match>
+				<allow_nulls></allow_nulls>
+				<type_code></type_code>
+				<input_output>in</input_output>
+				<data_name>alert</data_name>
+			</hash_07000909301ab0fe68419fd61a0081576f0854>
+			<hash_0700093d8db8cda625eac43afa6e287a8a931d>
+				<name>Email address you want to send the alerts to (seperate them by a ,).</name>
+				<update_rra></update_rra>
+				<regexp_match></regexp_match>
+				<allow_nulls></allow_nulls>
+				<type_code></type_code>
+				<input_output>in</input_output>
+				<data_name>tosendemails</data_name>
+			</hash_0700093d8db8cda625eac43afa6e287a8a931d>
+		</fields>
+	</hash_030009f1a5ca91769f6d7b7f059ab036dc22c9>
+	<hash_150009c21df5178e5c955013591239eb0afd46>
+		<name>Daily (5 Minute Average)</name>
+		<x_files_factor>0.5</x_files_factor>
+		<steps>1</steps>
+		<rows>51840</rows>
+		<timespan>86400</timespan>
+		<cf_items>1|2|3|4</cf_items>
+	</hash_150009c21df5178e5c955013591239eb0afd46>
+	<hash_1500090d9c0af8b8acdc7807943937b3208e29>
+		<name>Weekly (30 Minute Average)</name>
+		<x_files_factor>0.5</x_files_factor>
+		<steps>6</steps>
+		<rows>8736</rows>
+		<timespan>604800</timespan>
+		<cf_items>1|2|3|4</cf_items>
+	</hash_1500090d9c0af8b8acdc7807943937b3208e29>
+	<hash_1500096fc2d038fb42950138b0ce3e9874cc60>
+		<name>Monthly (2 Hour Average)</name>
+		<x_files_factor>0.5</x_files_factor>
+		<steps>24</steps>
+		<rows>2160</rows>
+		<timespan>2678400</timespan>
+		<cf_items>1|2|3|4</cf_items>
+	</hash_1500096fc2d038fb42950138b0ce3e9874cc60>
+	<hash_150009e36f3adb9f152adfa5dc50fd2b23337e>
+		<name>Yearly (1 Day Average)</name>
+		<x_files_factor>0.5</x_files_factor>
+		<steps>288</steps>
+		<rows>797</rows>
+		<timespan>33053184</timespan>
+		<cf_items>1|2|3|4</cf_items>
+	</hash_150009e36f3adb9f152adfa5dc50fd2b23337e>
+</cacti>

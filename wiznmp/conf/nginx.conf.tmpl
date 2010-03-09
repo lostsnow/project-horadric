@@ -1,0 +1,62 @@
+user www www;
+worker_processes ${data['ngx_worker_num']};
+
+error_log ${data['ngx_errlog_path']} crit;
+pid ${data['ngx_pid_path']};
+
+# Specifies the value for maximum file descriptors that can be opened by this process.
+worker_rlimit_nofile 51200;
+
+events
+{
+    use epoll;
+    worker_connections 51200;
+}
+
+http
+{
+    include mime.types;
+    default_type application/octet-stream;
+
+    server_names_hash_bucket_size 128;
+    server_tokens off;       # default: on
+
+    # Size Limits & Buffer Overflows
+    client_body_buffer_size     1K;     # default: 8k/16k
+    client_header_buffer_size   1k;
+    large_client_header_buffers 2 1k;   # default: 4 4k/8k
+    client_max_body_size        20m;    # default: 1m
+
+    sendfile on;
+    tcp_nopush on;
+    tcp_nodelay on;
+
+    # Timeouts
+    client_body_timeout   10;       # default: 60
+    client_header_timeout 10;       # default: 60
+    keepalive_timeout     5 5;      # default: 75
+    send_timeout          10;       # default: 60
+
+    fastcgi_connect_timeout      300;
+    fastcgi_send_timeout         300;
+    fastcgi_read_timeout         300;       # default: 60
+    fastcgi_buffer_size          4k;       # default: 4k/8k
+    fastcgi_buffers              8 4k;     # default: 8 4k/8k;
+    fastcgi_busy_buffers_size    8k;
+    fastcgi_temp_file_write_size 8k;
+
+    gzip on;
+    gzip_min_length   1k;
+    gzip_buffers      4 16k;
+    gzip_http_version 1.0;
+    gzip_comp_level   2;
+    gzip_types text/plain application/x-javascript text/css application/xml;
+    gzip_vary on;
+
+    log_format access '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" $http_x_forwarded_for';
+    access_log ${data['ngx_accesslog_path']} access;
+
+    include ${data['ngx_conf_path']}/vhost/*;
+}

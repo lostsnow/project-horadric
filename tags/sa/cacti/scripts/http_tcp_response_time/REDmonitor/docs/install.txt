@@ -1,0 +1,23 @@
+Cacti Version needed -- 
+
+0.8.6f
+
+Perl modules needed --
+
+use Time::HiRes qw(gettimeofday tv_interval);
+use RRDs;
+use HTTP::Request;
+use HTTP::Date;
+use LWP::UserAgent;
+use CGI qw(:standard);
+use CGI::Carp;
+use DBI;
+
+Install --
+
+Put the REDHTTPresponse.pl script in the cacti scripts directory.
+Import all the templates into cacti.
+Create the REDmonitor table using the sql file in the sql directory.
+Set up a cron job with the Prune_REDmonitor.php file if you wish to prune the table.
+Edit the REDHTTPredponse.pl file and put in your database details. You can also edit any or the email messages if you wish to.
+
