@@ -171,7 +171,7 @@ fi
 
 clear
 echo "========================================================================="
-echo "  Wiznpm v0.1 for CentOS/RHEL etc."
+echo "  Wiznmp v0.1 for CentOS/RHEL etc."
 echo "  Author: lostsnow (lostsnow@gmail.com)"
 echo "========================================================================="
 echo "A tool to auto-compile & install Nginx+MySQL+PHP on Linux"
@@ -764,7 +764,7 @@ $nginx_dir/sbin/nginx
 
 clear
 echo "========================================================================="
-echo "  Wiznpm v0.1 for CentOS/RHEL etc."
+echo "  Wiznmp v0.1 for CentOS/RHEL etc."
 echo "  Author: lostsnow (lostsnow@gmail.com)"
 echo "========================================================================="
 echo ""

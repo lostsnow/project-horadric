@@ -5,7 +5,7 @@
 #
 # $Id$
 
-__appname__ = 'WizLog'
+__appname__ = 'Wiznmp'
 __author__ = 'lostsnow'
 
 from mako.template import Template

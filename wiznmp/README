@@ -1,7 +1,7 @@
-# Wiznpm v0.1 for CentOS/RHEL etc."
+# Wiznmp v0.1 for CentOS/RHEL etc."
 # Author: lostsnow (lostsnow@gmail.com)"
 
-What is Wiznpm?
+What is Wiznmp?
 ============================================================
 A tool to auto-compile & install Nginx+MySQL+PHP on Linux
 For more information please visit http://www.lsproc.com/blog/

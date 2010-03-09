@@ -83,7 +83,7 @@ apt_bak_name="sources.list."`date '+%Y%m%d%H%M%S'`
 
 clear
 echo "========================================================================="
-echo "  Wiznpm v0.1 for Ubuntu"
+echo "  Wiznmp v0.1 for Ubuntu"
 echo "  Author: lostsnow (lostsnow@gmail.com)"
 echo "========================================================================="
 echo "A tool to auto-compile & install Nginx+MySQL+PHP on Linux"
@@ -434,7 +434,7 @@ $nginx_dir/sbin/nginx
 
 clear
 echo "========================================================================="
-echo "  Wiznpm v0.1 for Ubuntu"
+echo "  Wiznmp v0.1 for Ubuntu"
 echo "  Author: lostsnow (lostsnow@gmail.com)"
 echo "========================================================================="
 echo ""
