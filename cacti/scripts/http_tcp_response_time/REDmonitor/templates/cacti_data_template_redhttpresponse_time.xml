@@ -1,0 +1,152 @@
+<cacti>	
+	<hash_0100098a0eb7d127d2509af576fa9434b74f65>
+		<name>REDHTTPresponse Time</name>
+		<ds>
+			<t_name></t_name>
+			<name>REDHTTPresponse Time</name>
+			<data_input_id>hash_03000923edf09073b8f65e8df5c0197caf1f29</data_input_id>
+			<t_rra_id></t_rra_id>
+			<t_rrd_step></t_rrd_step>
+			<rrd_step>300</rrd_step>
+			<t_active></t_active>
+			<active>on</active>
+			<rra_items>hash_150009c21df5178e5c955013591239eb0afd46|hash_1500090d9c0af8b8acdc7807943937b3208e29|hash_1500096fc2d038fb42950138b0ce3e9874cc60|hash_150009e36f3adb9f152adfa5dc50fd2b23337e</rra_items>
+		</ds>
+		<items>
+			<hash_080009d63d681c51b3746aed89b5710a534f17>
+				<t_data_source_name></t_data_source_name>
+				<data_source_name>ResponseTime</data_source_name>
+				<t_rrd_minimum></t_rrd_minimum>
+				<rrd_minimum>0</rrd_minimum>
+				<t_rrd_maximum></t_rrd_maximum>
+				<rrd_maximum>5000</rrd_maximum>
+				<t_data_source_type_id></t_data_source_type_id>
+				<data_source_type_id>1</data_source_type_id>
+				<t_rrd_heartbeat></t_rrd_heartbeat>
+				<rrd_heartbeat>600</rrd_heartbeat>
+				<t_data_input_field_id></t_data_input_field_id>
+				<data_input_field_id>hash_070009f7ce7e35a406a29294d82a8779deb553</data_input_field_id>
+			</hash_080009d63d681c51b3746aed89b5710a534f17>
+		</items>
+		<data>
+			<item_000>
+				<data_input_field_id>hash_07000908df8fb3cfcbc7ba3ee56c4cea2a6856</data_input_field_id>
+				<t_value></t_value>
+				<value>no</value>
+			</item_000>
+			<item_001>
+				<data_input_field_id>hash_0700096724f38671bf0fdf7249ca0966cbb055</data_input_field_id>
+				<t_value>on</t_value>
+				<value>www.test.com</value>
+			</item_001>
+			<item_002>
+				<data_input_field_id>hash_070009f37e321923b3a313ed69c4bf00db0bb2</data_input_field_id>
+				<t_value></t_value>
+				<value>no</value>
+			</item_002>
+			<item_003>
+				<data_input_field_id>hash_0700098cb68d82890f72899e32b113780d2f33</data_input_field_id>
+				<t_value>on</t_value>
+				<value>'<!--bottom header-->'</value>
+			</item_003>
+			<item_004>
+				<data_input_field_id>hash_07000976cf8a50d2760cda6558aab4cb612b61</data_input_field_id>
+				<t_value>on</t_value>
+				<value>'<!--top header-->'</value>
+			</item_004>
+		</data>
+	</hash_0100098a0eb7d127d2509af576fa9434b74f65>
+	<hash_03000923edf09073b8f65e8df5c0197caf1f29>
+		<name>REDHTTPresponse Time</name>
+		<type_id>1</type_id>
+		<input_string>perl &amp;lt;path_cacti&amp;gt;/scripts/REDHTTPresponse.pl &amp;lt;siteurl&amp;gt; &amp;lt;header&amp;gt; &amp;lt;footer&amp;gt; &amp;lt;log&amp;gt; &amp;lt;alert&amp;gt;</input_string>
+		<fields>
+			<hash_070009f7ce7e35a406a29294d82a8779deb553>
+				<name>Response Time</name>
+				<update_rra>on</update_rra>
+				<regexp_match></regexp_match>
+				<allow_nulls></allow_nulls>
+				<type_code></type_code>
+				<input_output>out</input_output>
+				<data_name>ResponseTime</data_name>
+			</hash_070009f7ce7e35a406a29294d82a8779deb553>
+			<hash_07000976cf8a50d2760cda6558aab4cb612b61>
+				<name>Top Header</name>
+				<update_rra></update_rra>
+				<regexp_match></regexp_match>
+				<allow_nulls></allow_nulls>
+				<type_code></type_code>
+				<input_output>in</input_output>
+				<data_name>header</data_name>
+			</hash_07000976cf8a50d2760cda6558aab4cb612b61>
+			<hash_0700098cb68d82890f72899e32b113780d2f33>
+				<name>Bottom footer</name>
+				<update_rra></update_rra>
+				<regexp_match></regexp_match>
+				<allow_nulls></allow_nulls>
+				<type_code></type_code>
+				<input_output>in</input_output>
+				<data_name>footer</data_name>
+			</hash_0700098cb68d82890f72899e32b113780d2f33>
+			<hash_0700096724f38671bf0fdf7249ca0966cbb055>
+				<name>Web address to monitor</name>
+				<update_rra></update_rra>
+				<regexp_match></regexp_match>
+				<allow_nulls></allow_nulls>
+				<type_code></type_code>
+				<input_output>in</input_output>
+				<data_name>siteurl</data_name>
+			</hash_0700096724f38671bf0fdf7249ca0966cbb055>
+			<hash_07000908df8fb3cfcbc7ba3ee56c4cea2a6856>
+				<name>Log to mysql</name>
+				<update_rra></update_rra>
+				<regexp_match></regexp_match>
+				<allow_nulls></allow_nulls>
+				<type_code></type_code>
+				<input_output>in</input_output>
+				<data_name>log</data_name>
+			</hash_07000908df8fb3cfcbc7ba3ee56c4cea2a6856>
+			<hash_070009f37e321923b3a313ed69c4bf00db0bb2>
+				<name>Weather or not to alert</name>
+				<update_rra></update_rra>
+				<regexp_match></regexp_match>
+				<allow_nulls></allow_nulls>
+				<type_code></type_code>
+				<input_output>in</input_output>
+				<data_name>alert</data_name>
+			</hash_070009f37e321923b3a313ed69c4bf00db0bb2>
+		</fields>
+	</hash_03000923edf09073b8f65e8df5c0197caf1f29>
+	<hash_150009c21df5178e5c955013591239eb0afd46>
+		<name>Daily (5 Minute Average)</name>
+		<x_files_factor>0.5</x_files_factor>
+		<steps>1</steps>
+		<rows>51840</rows>
+		<timespan>86400</timespan>
+		<cf_items>1|2|3|4</cf_items>
+	</hash_150009c21df5178e5c955013591239eb0afd46>
+	<hash_1500090d9c0af8b8acdc7807943937b3208e29>
+		<name>Weekly (30 Minute Average)</name>
+		<x_files_factor>0.5</x_files_factor>
+		<steps>6</steps>
+		<rows>8736</rows>
+		<timespan>604800</timespan>
+		<cf_items>1|2|3|4</cf_items>
+	</hash_1500090d9c0af8b8acdc7807943937b3208e29>
+	<hash_1500096fc2d038fb42950138b0ce3e9874cc60>
+		<name>Monthly (2 Hour Average)</name>
+		<x_files_factor>0.5</x_files_factor>
+		<steps>24</steps>
+		<rows>2160</rows>
+		<timespan>2678400</timespan>
+		<cf_items>1|2|3|4</cf_items>
+	</hash_1500096fc2d038fb42950138b0ce3e9874cc60>
+	<hash_150009e36f3adb9f152adfa5dc50fd2b23337e>
+		<name>Yearly (1 Day Average)</name>
+		<x_files_factor>0.5</x_files_factor>
+		<steps>288</steps>
+		<rows>797</rows>
+		<timespan>33053184</timespan>
+		<cf_items>1|2|3|4</cf_items>
+	</hash_150009e36f3adb9f152adfa5dc50fd2b23337e>
+</cacti>

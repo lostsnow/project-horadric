@@ -1,0 +1,353 @@
+<cacti>	
+	<hash_000009fa1d3124257f5b0c96d00543e6e7ab50>
+		<name>REDHTTPresponse Content</name>
+		<graph>
+			<t_title>on</t_title>
+			<title>|siteurl| - REDHTTPresponse Content</title>
+			<t_image_format_id></t_image_format_id>
+			<image_format_id>1</image_format_id>
+			<t_height></t_height>
+			<height>120</height>
+			<t_width></t_width>
+			<width>500</width>
+			<t_auto_scale></t_auto_scale>
+			<auto_scale>on</auto_scale>
+			<t_auto_scale_opts></t_auto_scale_opts>
+			<auto_scale_opts>2</auto_scale_opts>
+			<t_auto_scale_log></t_auto_scale_log>
+			<auto_scale_log></auto_scale_log>
+			<t_auto_scale_rigid></t_auto_scale_rigid>
+			<auto_scale_rigid></auto_scale_rigid>
+			<t_auto_padding></t_auto_padding>
+			<auto_padding>on</auto_padding>
+			<t_export></t_export>
+			<export>on</export>
+			<t_upper_limit></t_upper_limit>
+			<upper_limit>2</upper_limit>
+			<t_lower_limit></t_lower_limit>
+			<lower_limit>-2</lower_limit>
+			<t_base_value></t_base_value>
+			<base_value>1000</base_value>
+			<t_unit_value></t_unit_value>
+			<unit_value></unit_value>
+			<t_unit_exponent_value></t_unit_exponent_value>
+			<unit_exponent_value></unit_exponent_value>
+			<t_vertical_label></t_vertical_label>
+			<vertical_label>Content Level</vertical_label>
+		</graph>
+		<items>
+			<hash_100009e471608a6ed7a0baf9baa975540eec4b>
+				<task_item_id>hash_080009da5ea9cc46d50cbe535774d76b5adf5e</task_item_id>
+				<color_id>F51D30</color_id>
+				<graph_type_id>5</graph_type_id>
+				<consolidation_function_id>1</consolidation_function_id>
+				<cdef_id>0</cdef_id>
+				<value></value>
+				<gprint_id>hash_06000919414480d6897c8731c7dc6c5310653e</gprint_id>
+				<text_format></text_format>
+				<hard_return></hard_return>
+				<sequence>1</sequence>
+			</hash_100009e471608a6ed7a0baf9baa975540eec4b>
+			<hash_100009c0e14af93573aa359aff55ac8e7e7676>
+				<task_item_id>hash_080009da5ea9cc46d50cbe535774d76b5adf5e</task_item_id>
+				<color_id>0</color_id>
+				<graph_type_id>9</graph_type_id>
+				<consolidation_function_id>4</consolidation_function_id>
+				<cdef_id>0</cdef_id>
+				<value></value>
+				<gprint_id>hash_06000919414480d6897c8731c7dc6c5310653e</gprint_id>
+				<text_format>Current level:</text_format>
+				<hard_return></hard_return>
+				<sequence>2</sequence>
+			</hash_100009c0e14af93573aa359aff55ac8e7e7676>
+			<hash_10000919e317d619daf04c2227745983fc2493>
+				<task_item_id>hash_080009da5ea9cc46d50cbe535774d76b5adf5e</task_item_id>
+				<color_id>0</color_id>
+				<graph_type_id>9</graph_type_id>
+				<consolidation_function_id>1</consolidation_function_id>
+				<cdef_id>0</cdef_id>
+				<value></value>
+				<gprint_id>hash_06000919414480d6897c8731c7dc6c5310653e</gprint_id>
+				<text_format>Average level:</text_format>
+				<hard_return>on</hard_return>
+				<sequence>3</sequence>
+			</hash_10000919e317d619daf04c2227745983fc2493>
+			<hash_10000912f45c26f96bceff3e4d899e008e730d>
+				<task_item_id>0</task_item_id>
+				<color_id>0</color_id>
+				<graph_type_id>1</graph_type_id>
+				<consolidation_function_id>1</consolidation_function_id>
+				<cdef_id>0</cdef_id>
+				<value></value>
+				<gprint_id>hash_060009e9c43831e54eca8069317a2ce8c6f751</gprint_id>
+				<text_format></text_format>
+				<hard_return>on</hard_return>
+				<sequence>5</sequence>
+			</hash_10000912f45c26f96bceff3e4d899e008e730d>
+			<hash_1000095f50ddd5a520279b434ef7e5c2fc4add>
+				<task_item_id>0</task_item_id>
+				<color_id>0</color_id>
+				<graph_type_id>1</graph_type_id>
+				<consolidation_function_id>1</consolidation_function_id>
+				<cdef_id>0</cdef_id>
+				<value></value>
+				<gprint_id>hash_060009e9c43831e54eca8069317a2ce8c6f751</gprint_id>
+				<text_format> 2 = Correct Content page is returned perfectly.</text_format>
+				<hard_return>on</hard_return>
+				<sequence>6</sequence>
+			</hash_1000095f50ddd5a520279b434ef7e5c2fc4add>
+			<hash_100009dcc1942e920f8683c2203ece9e7869ba>
+				<task_item_id>0</task_item_id>
+				<color_id>0</color_id>
+				<graph_type_id>1</graph_type_id>
+				<consolidation_function_id>1</consolidation_function_id>
+				<cdef_id>0</cdef_id>
+				<value></value>
+				<gprint_id>hash_060009e9c43831e54eca8069317a2ce8c6f751</gprint_id>
+				<text_format> 1 = Page is returned but has incorrect content.</text_format>
+				<hard_return>on</hard_return>
+				<sequence>7</sequence>
+			</hash_100009dcc1942e920f8683c2203ece9e7869ba>
+			<hash_1000098929c62c499a5e28044c600eeb540608>
+				<task_item_id>0</task_item_id>
+				<color_id>0</color_id>
+				<graph_type_id>1</graph_type_id>
+				<consolidation_function_id>1</consolidation_function_id>
+				<cdef_id>0</cdef_id>
+				<value></value>
+				<gprint_id>hash_060009e9c43831e54eca8069317a2ce8c6f751</gprint_id>
+				<text_format> 0 = Represents an Error.</text_format>
+				<hard_return>on</hard_return>
+				<sequence>8</sequence>
+			</hash_1000098929c62c499a5e28044c600eeb540608>
+			<hash_10000979006e402431f01f06cafe8e0a3b5404>
+				<task_item_id>0</task_item_id>
+				<color_id>0</color_id>
+				<graph_type_id>1</graph_type_id>
+				<consolidation_function_id>1</consolidation_function_id>
+				<cdef_id>0</cdef_id>
+				<value></value>
+				<gprint_id>hash_060009e9c43831e54eca8069317a2ce8c6f751</gprint_id>
+				<text_format>-1 = Represents a failed DNS lookup.</text_format>
+				<hard_return>on</hard_return>
+				<sequence>9</sequence>
+			</hash_10000979006e402431f01f06cafe8e0a3b5404>
+			<hash_100009616852d56a4ed0398ef023b069097682>
+				<task_item_id>0</task_item_id>
+				<color_id>0</color_id>
+				<graph_type_id>1</graph_type_id>
+				<consolidation_function_id>1</consolidation_function_id>
+				<cdef_id>0</cdef_id>
+				<value></value>
+				<gprint_id>hash_060009e9c43831e54eca8069317a2ce8c6f751</gprint_id>
+				<text_format>-2 = A big problem.</text_format>
+				<hard_return>on</hard_return>
+				<sequence>10</sequence>
+			</hash_100009616852d56a4ed0398ef023b069097682>
+			<hash_1000094577f3500600b8c80fecc9c4ade26819>
+				<task_item_id>0</task_item_id>
+				<color_id>0</color_id>
+				<graph_type_id>1</graph_type_id>
+				<consolidation_function_id>1</consolidation_function_id>
+				<cdef_id>0</cdef_id>
+				<value></value>
+				<gprint_id>hash_060009e9c43831e54eca8069317a2ce8c6f751</gprint_id>
+				<text_format></text_format>
+				<hard_return>on</hard_return>
+				<sequence>11</sequence>
+			</hash_1000094577f3500600b8c80fecc9c4ade26819>
+			<hash_100009a196ef3f5dc3e84b38e9b54256bd1484>
+				<task_item_id>0</task_item_id>
+				<color_id>0</color_id>
+				<graph_type_id>1</graph_type_id>
+				<consolidation_function_id>1</consolidation_function_id>
+				<cdef_id>0</cdef_id>
+				<value></value>
+				<gprint_id>hash_060009e9c43831e54eca8069317a2ce8c6f751</gprint_id>
+				<text_format>Graph Updated: |date_time|                              Hosted by Dodgynet.IT</text_format>
+				<hard_return>on</hard_return>
+				<sequence>12</sequence>
+			</hash_100009a196ef3f5dc3e84b38e9b54256bd1484>
+		</items>
+		<inputs>
+			<hash_0900095e2e84f861dbbf956bcf648a7aaf618d>
+				<name>Data Source [ContentLevel]</name>
+				<description></description>
+				<column_name>task_item_id</column_name>
+				<items>hash_00000919e317d619daf04c2227745983fc2493|hash_000009e471608a6ed7a0baf9baa975540eec4b|hash_000009c0e14af93573aa359aff55ac8e7e7676</items>
+			</hash_0900095e2e84f861dbbf956bcf648a7aaf618d>
+		</inputs>
+	</hash_000009fa1d3124257f5b0c96d00543e6e7ab50>
+	<hash_01000999914692912c03d8b213a725a432b726>
+		<name>REDHTTPresponse Content</name>
+		<ds>
+			<t_name></t_name>
+			<name>REDHTTPresponse Content</name>
+			<data_input_id>hash_030009f1a5ca91769f6d7b7f059ab036dc22c9</data_input_id>
+			<t_rra_id></t_rra_id>
+			<t_rrd_step></t_rrd_step>
+			<rrd_step>300</rrd_step>
+			<t_active></t_active>
+			<active>on</active>
+			<rra_items>hash_150009c21df5178e5c955013591239eb0afd46|hash_1500090d9c0af8b8acdc7807943937b3208e29|hash_1500096fc2d038fb42950138b0ce3e9874cc60|hash_150009e36f3adb9f152adfa5dc50fd2b23337e</rra_items>
+		</ds>
+		<items>
+			<hash_080009da5ea9cc46d50cbe535774d76b5adf5e>
+				<t_data_source_name></t_data_source_name>
+				<data_source_name>ContentLevel</data_source_name>
+				<t_rrd_minimum></t_rrd_minimum>
+				<rrd_minimum>-2</rrd_minimum>
+				<t_rrd_maximum></t_rrd_maximum>
+				<rrd_maximum>2</rrd_maximum>
+				<t_data_source_type_id></t_data_source_type_id>
+				<data_source_type_id>1</data_source_type_id>
+				<t_rrd_heartbeat></t_rrd_heartbeat>
+				<rrd_heartbeat>600</rrd_heartbeat>
+				<t_data_input_field_id></t_data_input_field_id>
+				<data_input_field_id>hash_0700097a3b57ed4feae38f223720cf8b61a25d</data_input_field_id>
+			</hash_080009da5ea9cc46d50cbe535774d76b5adf5e>
+		</items>
+		<data>
+			<item_000>
+				<data_input_field_id>hash_0700093d8db8cda625eac43afa6e287a8a931d</data_input_field_id>
+				<t_value>on</t_value>
+				<value>'test@test.com anothertest@test.com'</value>
+			</item_000>
+			<item_001>
+				<data_input_field_id>hash_07000909301ab0fe68419fd61a0081576f0854</data_input_field_id>
+				<t_value></t_value>
+				<value>yes</value>
+			</item_001>
+			<item_002>
+				<data_input_field_id>hash_0700098646ad4fe2ef286b88edd55bf80e5fd0</data_input_field_id>
+				<t_value></t_value>
+				<value>yes</value>
+			</item_002>
+			<item_003>
+				<data_input_field_id>hash_070009886fe98df8886f13a39c816523f2ca04</data_input_field_id>
+				<t_value>on</t_value>
+				<value>'<!--bottom header-->'</value>
+			</item_003>
+			<item_004>
+				<data_input_field_id>hash_070009f5d0ed9f73e05e75049c86132a0ddf76</data_input_field_id>
+				<t_value>on</t_value>
+				<value>www.test.com</value>
+			</item_004>
+			<item_005>
+				<data_input_field_id>hash_070009daeec78d46d5cb5f18c298170dd1e70a</data_input_field_id>
+				<t_value>on</t_value>
+				<value>'<!--top header-->'</value>
+			</item_005>
+		</data>
+	</hash_01000999914692912c03d8b213a725a432b726>
+	<hash_030009f1a5ca91769f6d7b7f059ab036dc22c9>
+		<name>REDHTTPresponse Content</name>
+		<type_id>1</type_id>
+		<input_string>perl &amp;lt;path_cacti&amp;gt;/scripts/REDHTTPresponse.pl &amp;lt;siteurl&amp;gt; &amp;lt;header&amp;gt; &amp;lt;footer&amp;gt; &amp;lt;log&amp;gt; &amp;lt;alert&amp;gt; &amp;lt;tosendemails&amp;gt;</input_string>
+		<fields>
+			<hash_070009daeec78d46d5cb5f18c298170dd1e70a>
+				<name>Top Header</name>
+				<update_rra></update_rra>
+				<regexp_match></regexp_match>
+				<allow_nulls></allow_nulls>
+				<type_code></type_code>
+				<input_output>in</input_output>
+				<data_name>header</data_name>
+			</hash_070009daeec78d46d5cb5f18c298170dd1e70a>
+			<hash_070009f5d0ed9f73e05e75049c86132a0ddf76>
+				<name>Web address to monitor</name>
+				<update_rra></update_rra>
+				<regexp_match></regexp_match>
+				<allow_nulls></allow_nulls>
+				<type_code></type_code>
+				<input_output>in</input_output>
+				<data_name>siteurl</data_name>
+			</hash_070009f5d0ed9f73e05e75049c86132a0ddf76>
+			<hash_070009886fe98df8886f13a39c816523f2ca04>
+				<name>Bottom Header</name>
+				<update_rra></update_rra>
+				<regexp_match></regexp_match>
+				<allow_nulls></allow_nulls>
+				<type_code></type_code>
+				<input_output>in</input_output>
+				<data_name>footer</data_name>
+			</hash_070009886fe98df8886f13a39c816523f2ca04>
+			<hash_0700097a3b57ed4feae38f223720cf8b61a25d>
+				<name>Content Level</name>
+				<update_rra>on</update_rra>
+				<regexp_match></regexp_match>
+				<allow_nulls></allow_nulls>
+				<type_code></type_code>
+				<input_output>out</input_output>
+				<data_name>ContentLevel</data_name>
+			</hash_0700097a3b57ed4feae38f223720cf8b61a25d>
+			<hash_0700098646ad4fe2ef286b88edd55bf80e5fd0>
+				<name>Log to mysql</name>
+				<update_rra></update_rra>
+				<regexp_match></regexp_match>
+				<allow_nulls></allow_nulls>
+				<type_code></type_code>
+				<input_output>in</input_output>
+				<data_name>log</data_name>
+			</hash_0700098646ad4fe2ef286b88edd55bf80e5fd0>
+			<hash_07000909301ab0fe68419fd61a0081576f0854>
+				<name>Weather or not to alert</name>
+				<update_rra></update_rra>
+				<regexp_match></regexp_match>
+				<allow_nulls></allow_nulls>
+				<type_code></type_code>
+				<input_output>in</input_output>
+				<data_name>alert</data_name>
+			</hash_07000909301ab0fe68419fd61a0081576f0854>
+			<hash_0700093d8db8cda625eac43afa6e287a8a931d>
+				<name>Email address you want to send the alerts to (seperate them by a ,).</name>
+				<update_rra></update_rra>
+				<regexp_match></regexp_match>
+				<allow_nulls></allow_nulls>
+				<type_code></type_code>
+				<input_output>in</input_output>
+				<data_name>tosendemails</data_name>
+			</hash_0700093d8db8cda625eac43afa6e287a8a931d>
+		</fields>
+	</hash_030009f1a5ca91769f6d7b7f059ab036dc22c9>
+	<hash_150009c21df5178e5c955013591239eb0afd46>
+		<name>Daily (5 Minute Average)</name>
+		<x_files_factor>0.5</x_files_factor>
+		<steps>1</steps>
+		<rows>51840</rows>
+		<timespan>86400</timespan>
+		<cf_items>1|2|3|4</cf_items>
+	</hash_150009c21df5178e5c955013591239eb0afd46>
+	<hash_1500090d9c0af8b8acdc7807943937b3208e29>
+		<name>Weekly (30 Minute Average)</name>
+		<x_files_factor>0.5</x_files_factor>
+		<steps>6</steps>
+		<rows>8736</rows>
+		<timespan>604800</timespan>
+		<cf_items>1|2|3|4</cf_items>
+	</hash_1500090d9c0af8b8acdc7807943937b3208e29>
+	<hash_1500096fc2d038fb42950138b0ce3e9874cc60>
+		<name>Monthly (2 Hour Average)</name>
+		<x_files_factor>0.5</x_files_factor>
+		<steps>24</steps>
+		<rows>2160</rows>
+		<timespan>2678400</timespan>
+		<cf_items>1|2|3|4</cf_items>
+	</hash_1500096fc2d038fb42950138b0ce3e9874cc60>
+	<hash_150009e36f3adb9f152adfa5dc50fd2b23337e>
+		<name>Yearly (1 Day Average)</name>
+		<x_files_factor>0.5</x_files_factor>
+		<steps>288</steps>
+		<rows>797</rows>
+		<timespan>33053184</timespan>
+		<cf_items>1|2|3|4</cf_items>
+	</hash_150009e36f3adb9f152adfa5dc50fd2b23337e>
+	<hash_060009e9c43831e54eca8069317a2ce8c6f751>
+		<name>Normal</name>
+		<gprint_text>%8.2lf %s</gprint_text>
+	</hash_060009e9c43831e54eca8069317a2ce8c6f751>
+	<hash_06000919414480d6897c8731c7dc6c5310653e>
+		<name>Exact Numbers</name>
+		<gprint_text>%8.0lf</gprint_text>
+	</hash_06000919414480d6897c8731c7dc6c5310653e>
+</cacti>
