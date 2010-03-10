@@ -637,7 +637,7 @@ make && make install
 
 cd $cur_dir
 rm -f $nginx_dir/conf/nginx.conf
-cp -f $ngx_conf_dir/* $nginx_dir/conf/
+cp -rf $ngx_conf_dir/* $nginx_dir/conf/
 
 rm -f $nginx_dir/conf/fcgi.conf
 cp -f $conf_dir/fcgi.conf $nginx_dir/conf/fcgi.conf
