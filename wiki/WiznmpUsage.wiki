@@ -1,0 +1,45 @@
+#labels Featured,wiznmp,usage
+= What is Wiznmp? =
+A tool to auto-compile & install Nginx+MySQL+PHP on Linux<br />
+For more information please visit [http://www.lsproc.com/blog/]
+
+= Features =
+  * Generate configuration files<br />
+  * Support for CentOS/RHEL 4/5 i386/x86_64
+
+= Packages =
+following packages will be installed
+  * python & mako for generate configuration files
+  * nginx web server
+  * php & php-fpm
+  * mysql database (mysql server optionaly)
+  * memcached server (optionaly)
+
+= Configuration =
+you can change following option by edit *centos.sh*<br />
+
+packages versions like `nginx_version="0.7.65"`
+{{{
+nginx_dir="/usr/local/nginx"
+php_dir="/usr/local/php"
+python_dir="/usr/local"
+mysql_dir="/usr/local/mysql"
+mysql_data_dir="/var/lib/mysql"
+memcached_dir="/usr/local/memcached"
+web_dir="/var/www"
+log_dir="/var/log/nginx"
+install_python="Yes"
+
+nginx_worker=8
+fcgi_children=128
+}}}
+
+= Installation =
+{{{
+#svn checkout http://project-horadric.googlecode.com/svn/wiznmp wiznmp
+#cd wiznmp
+#chmod +x centos.sh
+#./centos.sh
+or
+#./centos.sh 2>& 1 |tee wiznmp.log
+}}}
