@@ -158,14 +158,11 @@ web_dir="/var/www"
 log_dir="/var/log/nginx"
 install_python="Yes"
 
+# none, sohu, 163
+yum_source=none
+
 nginx_worker=8
 fcgi_children=128
-
-if [ ${DIST} == 'centos' ]; then
-    yum_source="CentOS-Base-sohu.repo"
-    yum_bak_name="CentOS-Base.repo."`date '+%Y%m%d%H%M%S'`
-    #yum_source_url=$base_download_url$yum_source
-fi
 
 #---------------------config end---------------------------
 
@@ -415,8 +412,15 @@ echo "===========update yum source file and update system start================"
 cd $cur_dir
 if [ ${DIST} == 'centos' ]; then
     if [ ${MAJORVERSION} == 5 ]; then
-        cp -f /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/$yum_bak_name
-        cp -f $conf_dir/$yum_source /etc/yum.repos.d/CentOS-Base.repo
+        if [ ${yum_source} == 'none' ]; then
+            echo "use default yum repos file."
+        elif [ ! -f $conf_dir/CentOS-Base-${yum_source}.repo ]; then
+            echo "use default yum repos file."
+        else
+            yum_bak_name="CentOS-Base.repo."`date '+%Y%m%d%H%M%S'`
+            cp -f /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/$yum_bak_name
+            cp -f $conf_dir/CentOS-Base-${yum_source}.repo /etc/yum.repos.d/CentOS-Base.repo
+        fi
     fi
 fi
 
