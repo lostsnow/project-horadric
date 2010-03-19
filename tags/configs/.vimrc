@@ -64,8 +64,9 @@ autocmd! BufWritePost $MYVIMRC source $MYVIMRC
 " Favorite filetype
 set fileformats=unix,dos,mac
 
-" nmap <Leader>fd :se ff=dos<CR>
-" nmap <Leader>fu :se ff=unix<CR>
+" change file format
+nmap <Leader>fd :se ff=dos<CR>
+nmap <Leader>fu :se ff=unix<CR>
 
 " Set default filetype
 set fileformat=unix
