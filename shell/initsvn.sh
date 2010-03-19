@@ -26,7 +26,7 @@ fi
 svnadmin create $svnpath
 
 killall svnserve
-svnserve -d -r /srv/svn/
+svnserve -d -r $base_dir
 
 if [ -d $dir_rand ]; then
     msg_exit "Error: directory structure has exist."
