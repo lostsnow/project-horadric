@@ -96,11 +96,14 @@ libmcrypt_version="2.5.8"
 mcrypt_version="2.6.8"
 memcached_version="1.4.4"
 pecl_memcache_version="2.2.5"
+apc_version="3.1.3p1"
 mhash_version="0.9.9.9"
 pcre_version="8.01"
 #eaccelerator_version="0.9.5.3"
 PDO_MYSQL_version="1.0.2"
 python_version="2.5.5"
+libevent_major_version="1.4"
+libevent_version=$libevent_major_version".13-stable"
 
 nginx_tar_gz_name="nginx-"$nginx_version".tar.gz"
 php_tar_gz_name="php-"$php_version".tar.gz"
@@ -111,11 +114,13 @@ libmcrypt_tar_gz_name="libmcrypt-"$libmcrypt_version".tar.gz"
 mcrypt_tar_gz_name="mcrypt-"$mcrypt_version".tar.gz"
 memcached_tar_gz_name="memcached-"$memcached_version".tar.gz"
 pecl_memcache_tar_gz_name="memcache-"$pecl_memcache_version".tgz"
+apc_tar_gz_name="APC-"$apc_version".tgz"
 mhash_tar_gz_name="mhash-"$mhash_version".tar.gz"
 pcre_tar_gz_name="pcre-"$pcre_version".tar.gz"
 #eaccelerator_tar_gz_name="eaccelerator-"$eaccelerator_version".tar.bz2"
 PDO_MYSQL_tar_gz_name="PDO_MYSQL-"$PDO_MYSQL_version".tgz"
 python_tar_gz_name="Python-"$python_version".tgz"
+libevent_tar_gz_name="libevent-"$libevent_version".tar.gz"
 
 nginx_source_dir_name="nginx-"$nginx_version
 php_source_dir_name="php-"$php_version
@@ -126,11 +131,13 @@ libmcrypt_source_dir_name="libmcrypt-"$libmcrypt_version
 mcrypt_source_dir_name="mcrypt-"$mcrypt_version
 memcache_source_dir_name="memcached-"$memcached_version
 pecl_memcache_source_dir_name="memcache-"$pecl_memcache_version
+apc_source_dir_name="APC-"$apc_version
 mhash_source_dir_name="mhash-"$mhash_version
 pcre_source_dir_name="pcre-"$pcre_version
 #eaccelerator_source_dir_name="eaccelerator-"$eaccelerator_version
 PDO_MYSQL_source_dir_name="PDO_MYSQL-"$PDO_MYSQL_version
 python_source_dir_name="Python-"$python_version
+libevent_source_dir_name="libevent-"$libevent_version
 
 base_download_url="http://project-horadric.googlecode.com/svn/tags/src/"
 nginx_download_url=$base_download_url$nginx_tar_gz_name
@@ -142,11 +149,13 @@ libmcrypt_download_url=$base_download_url$libmcrypt_tar_gz_name
 mcrypt_download_url=$base_download_url$mcrypt_tar_gz_name
 memcached_download_url=$base_download_url$memcached_tar_gz_name
 pecl_memcache_download_url=$base_download_url$pecl_memcache_tar_gz_name
+apc_download_url=$base_download_url$apc_tar_gz_name
 mhash_download_url=$base_download_url$mhash_tar_gz_name
 pcre_download_url=$base_download_url$pcre_tar_gz_name
 #eaccelerator_download_url=$base_download_url$eaccelerator_tar_gz_name
 PDO_MYSQL_download_url=$base_download_url$PDO_MYSQL_tar_gz_name
 python_download_url=$base_download_url$python_tar_gz_name
+libevent_download_url=$base_download_url$libevent_tar_gz_name
 
 nginx_dir="/usr/local/nginx"
 php_dir="/usr/local/php"
@@ -154,6 +163,7 @@ python_dir="/usr/local"
 mysql_dir="/usr/local/mysql"
 mysql_data_dir="/var/lib/mysql"
 memcached_dir="/usr/local/memcached"
+libevent_dir="/usr/local/libevent"
 web_dir="/var/www"
 log_dir="/var/log/nginx"
 install_python="Yes"
@@ -241,31 +251,46 @@ if [ "$1" != "--help" ]; then
 echo "===================download and check files start========================"
 cd $src_dir
 if [ "$sources_from" = "Download from Internet." ]; then
-    rm -f $nginx_tar_gz_name
+    rm -rf $nginx_tar_gz_name
+    rm -rf $nginx_source_dir_name
     wget -c $nginx_download_url
-    rm -f $php_tar_gz_name
+    rm -rf $php_tar_gz_name
+    rm -rf $php_source_dir_name
     wget -c $php_download_url
-    rm -f $mysql_tar_gz_name
+    rm -rf $mysql_tar_gz_name
+    rm -rf $mysql_source_dir_name
     wget -c $mysql_download_url
-    rm -f $php_fpm_tar_gz_name
+    rm -rf $php_fpm_tar_gz_name
+    rm -rf $php_fpm_source_dir_name
     wget -c $php_fpm_download_url
-    rm -f $libiconv_tar_gz_name
+    rm -rf $libiconv_tar_gz_name
+    rm -rf $libiconv_source_dir_name
     wget -c $libiconv_download_url
-    rm -f $libmcrypt_tar_gz_name
+    rm -rf $libmcrypt_tar_gz_name
+    rm -rf $libmcrypt_source_dir_name
     wget -c $libmcrypt_download_url
-    rm -f $mcrypt_tar_gz_name
+    rm -rf $mcrypt_tar_gz_name
+    rm -rf $mcrypt_source_dir_name
     wget -c $mcrypt_download_url
-    rm -f $pecl_memcache_tar_gz_name
+    rm -rf $pecl_memcache_tar_gz_name
+    rm -rf $pecl_memcache_source_dir_name
     wget -c $pecl_memcache_download_url
-    rm -f $mhash_tar_gz_name
+    rm -rf $apc_tar_gz_name
+    rm -rf $apc_source_dir_name
+    wget -c $apc_download_url
+    rm -rf $mhash_tar_gz_name
+    rm -rf $mhash_source_dir_name
     wget -c $mhash_download_url
-    rm -f $pcre_tar_gz_name
+    rm -rf $pcre_tar_gz_name
+    rm -rf $pcre_source_dir_name
     wget -c $pcre_download_url
-#    rm -f $eaccelerator_tar_gz_name
+#    rm -rf $eaccelerator_tar_gz_name
+#    rm -rf $eaccelerator_source_dir_name
 #    wget -c $eaccelerator_download_url
-    rm -f $PDO_MYSQL_tar_gz_name
+    rm -rf $PDO_MYSQL_tar_gz_name
+    rm -rf $PDO_MYSQL_source_dir_name
     wget -c $PDO_MYSQL_download_url
-#    rm -f $yum_source
+#    rm -rf $yum_source
 #    wget -c $yum_source_url
 fi
 
@@ -278,7 +303,11 @@ fi
 
 if [ "$install_memcached" = "Yes" ]; then
     if [ "$sources_from" = "Download from Internet." ]; then
-        rm -f $memcached_tar_gz_name
+        rm -rf $libevent_tar_gz_name
+        rm -rf $libevent_source_dir_name
+        wget -c $libevent_download_url
+        rm -rf $memcached_tar_gz_name
+        rm -rf $memcached_source_dir_name
         wget -c $memcached_download_url
     fi
 fi
@@ -288,122 +317,120 @@ if [ -s $nginx_tar_gz_name ]; then
     echo "$nginx_tar_gz_name [found]"
     else
     echo ""
-    echo "Error: $nginx_tar_gz_name not found!!!"
-    exit 0
+    msg_exit "Error: $nginx_tar_gz_name not found!!!"
 fi
 
 if [ -s $php_tar_gz_name ]; then
     echo "$php_tar_gz_name [found]"
     else
     echo ""
-    echo "Error: $php_tar_gz_name not found!!!"
-    exit 0
+    msg_exit "Error: $php_tar_gz_name not found!!!"
 fi
 
 if [ -s $mysql_tar_gz_name ]; then
     echo "$mysql_tar_gz_name [found]"
     else
     echo ""
-    echo "Error: $mysql_tar_gz_name not found!!!"
-    exit 0
+    msg_exit "Error: $mysql_tar_gz_name not found!!!"
 fi
 
 if [ -s $php_fpm_tar_gz_name ]; then
     echo "$php_fpm_tar_gz_name [found]"
     else
     echo ""
-    echo "Error: $php_fpm_tar_gz_name not found!!!"
-    exit 0
+    msg_exit "Error: $php_fpm_tar_gz_name not found!!!"
 fi
 
 if [ -s $libiconv_tar_gz_name ]; then
     echo "$libiconv_tar_gz_name [found]"
     else
     echo ""
-    echo "Error: $libiconv_tar_gz_name not found!!!"
-    exit 0
+    msg_exit "Error: $libiconv_tar_gz_name not found!!!"
 fi
 
 if [ -s $libmcrypt_tar_gz_name ]; then
     echo "$libmcrypt_tar_gz_name [found]"
     else
     echo ""
-    echo "Error: $libmcrypt_tar_gz_name not found!!!"
-    exit 0
+    msg_exit "Error: $libmcrypt_tar_gz_name not found!!!"
 fi
 
 if [ -s $mcrypt_tar_gz_name ]; then
     echo "$mcrypt_tar_gz_name [found]"
     else
     echo ""
-    echo "Error: $mcrypt_tar_gz_name not found!!!"
-    exit 0
+    msg_exit "Error: $mcrypt_tar_gz_name not found!!!"
 fi
 
 if [ -s $pecl_memcache_tar_gz_name ]; then
     echo "$pecl_memcache_tar_gz_name [found]"
     else
     echo ""
-    echo "Error: $pecl_memcache_tar_gz_name not found!!!"
-    exit 0
+    msg_exit "Error: $pecl_memcache_tar_gz_name not found!!!"
+fi
+
+if [ -s $apc_tar_gz_name ]; then
+    echo "$apc_tar_gz_name [found]"
+    else
+    echo ""
+    msg_exit "Error: $apc_tar_gz_name not found!!!"
 fi
 
 if [ -s $mhash_tar_gz_name ]; then
     echo "$mhash_tar_gz_name [found]"
     else
     echo ""
-    echo "Error: $mhash_tar_gz_name not found!!!"
-    exit 0
+    msg_exit "Error: $mhash_tar_gz_name not found!!!"
 fi
 
 if [ -s $pcre_tar_gz_name ]; then
     echo "$pcre_tar_gz_name [found]"
     else
     echo ""
-    echo "Error: $pcre_tar_gz_name not found!!!"
-    exit 0
+    msg_exit "Error: $pcre_tar_gz_name not found!!!"
 fi
 
 #if [ -s $eaccelerator_tar_gz_name ]; then
 #  echo "$eaccelerator_tar_gz_name [found]"
 #  else
 #  echo ""
-#  echo "Error: $eaccelerator_tar_gz_name not found!!!"
-#  exit 0
+#  msg_exit "Error: $eaccelerator_tar_gz_name not found!!!"
 #fi
 
 if [ -s $PDO_MYSQL_tar_gz_name ]; then
     echo "$PDO_MYSQL_tar_gz_name [found]"
     else
     echo ""
-    echo "Error: $PDO_MYSQL_tar_gz_name not found!!!"
-    exit 0
+    msg_exit "Error: $PDO_MYSQL_tar_gz_name not found!!!"
 fi
 
 #if [ -s $yum_source ]; then
 #    echo "$yum_source [found]"
 #    else
 #    echo ""
-#    echo "Error: $yum_source not found!!!"
-#    exit 0
+#    msg_exit "Error: $yum_source not found!!!"
 #fi
 if [ "$install_python" = "Yes" ]; then
     if [ -s $python_tar_gz_name ]; then
         echo "$python_tar_gz_name [found]"
         else
         echo ""
-        echo "Error: $python_tar_gz_name not found!!!"
-        exit 0
+        msg_exit "Error: $python_tar_gz_name not found!!!"
     fi
 fi
 
 if [ "$install_memcached" = "Yes" ]; then
+    if [ -s $libevent_tar_gz_name ]; then
+        echo "$libevent_tar_gz_name [found]"
+        else
+        echo ""
+        msg_exit "Error: $libevent_tar_gz_name not found!!!"
+    fi
     if [ -s $memcached_tar_gz_name ]; then
         echo "$memcached_tar_gz_name [found]"
         else
         echo ""
-        echo "Error: $memcached_tar_gz_name not found!!!"
-        exit 0
+        msg_exit "Error: $memcached_tar_gz_name not found!!!"
     fi
 fi
 echo "====================download and check files end========================="
@@ -561,6 +588,33 @@ if [ "$install_mysql_server" = "Yes" ]; then
 fi
 echo "============================mysql intall finished========================"
 
+if [ "$install_memcached" = "Yes" ]; then
+echo "===========================memcached install============================="
+cd $src_dir
+tar zxf $libevent_tar_gz_name
+cd $libevent_source_dir_name
+./configure --prefix=$libevent_dir
+make && make install
+
+libevent_so=libevent-$libevent_major_version.so.2
+if [ `uname -m` = 'x86_64' ]; then
+ln -s $libevent_dir/lib/$libevent_so /usr/lib64/$libevent_so
+else
+ln -s $libevent_dir/lib/$libevent_so /usr/lib/$libevent_so
+fi
+
+cd $src_dir
+tar zxf $memcached_tar_gz_name
+cd $memcached_source_dir_name
+if [ `uname -m` = 'x86_64' ]; then
+./configure --prefix=$memcached_dir --with-libevent=$libevent_dir --enable-64bit
+else
+./configure --prefix=$memcached_dir --with-libevent=$libevent_dir
+fi
+make && make install
+echo "========================memcached intall finished========================"
+fi
+
 echo "===============================php install==============================="
 cd $src_dir
 tar zxf $php_tar_gz_name
@@ -586,11 +640,40 @@ $php_dir/bin/phpize
 make
 make install
 
-sed -i 's#extension_dir = "./"#extension_dir = "'$php_dir'/lib/php/extensions/no-debug-non-zts-20060613/"\nextension = "memcache.so"\nextension = "pdo_mysql.so"\n#' $php_dir/etc/php.ini
+cd $src_dir
+tar zxf $apc_tar_gz_name
+cd $apc_source_dir_name
+$php_dir/bin/phpize
+./configure --with-php-config=$php_dir/bin/php-config
+make && make install
+
+sed -i 's#extension_dir = "./"#extension_dir = "'$php_dir'/lib/php/extensions/no-debug-non-zts-20060613/"\nextension = "memcache.so"\nextension = "pdo_mysql.so"\nextension = "apc.so"\n#' $php_dir/etc/php.ini
 sed -i 's/post_max_size = 8M/post_max_size = 50M/g' $php_dir/etc/php.ini
 sed -i 's/upload_max_filesize = 2M/upload_max_filesize = 50M/g' $php_dir/etc/php.ini
 sed -i 's/;date.timezone =/date.timezone = PRC/g' $php_dir/etc/php.ini
 #sed -i 's#output_buffering = Off#output_buffering = On#' $php_dir/etc/php.ini
+
+cat >>$php_dir/etc/php.ini<<EOF
+[APC]
+apc.enabled = 1
+apc.cache_by_default = On
+apc.enable_cli = off
+apc.file_update_protection = 2
+
+apc.ttl = 7200
+apc.user_ttl = 7200
+apc.gc_ttl = 3600
+
+apc.include_once_override = off
+apc.num_files_hint = 1000
+apc.optimization = 1
+
+apc.shm_segments = 1
+apc.shm_size = 64
+
+apc.slam_defense = 0
+apc.max_file_size = 1M
+EOF
 
 #if [ `uname -m` = 'x86_64' ]; then
 #        tar zxf ZendOptimizer-3.3.9-linux-glibc23-x86_64.tar.gz
@@ -765,6 +848,11 @@ if [ "$install_mysql_server" = "Yes" ]; then
 fi
 $php_dir/sbin/php-fpm start
 $nginx_dir/sbin/nginx
+
+# start memcached
+#if [ "$install_memcached" = "Yes" ]; then
+#    $memcached_dir/bin/memcached -d -m 512 -l 127.0.0.1 -p 11211 -u www
+#fi
 
 clear
 echo "========================================================================="
