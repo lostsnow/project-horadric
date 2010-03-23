@@ -12,8 +12,8 @@ following packages will be installed
   * python & mako for generate configuration files
   * nginx web server
   * php & php-fpm
-  * mysql database (mysql server optionaly)
-  * memcached server (optionaly)
+  * mysql database (mysql server optionally)
+  * memcached server (optionally)
 
 = Configuration =
 you can change following option by edit *centos.sh*<br />
