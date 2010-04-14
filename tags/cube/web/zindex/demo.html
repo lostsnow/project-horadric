@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Flash z-index</title>
+<link href="styles3.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript"><!--//--><![CDATA[//><!--
+
+startList = function() {
+	if (document.all&&document.getElementById) {
+		navRoot = document.getElementById("nav");
+		for (i=0; i<navRoot.childNodes.length; i++) {
+			node = navRoot.childNodes[i];
+			if (node.nodeName=="LI") {
+				node.onmouseover=function() {
+					this.className+=" over";
+				}
+				node.onmouseout=function() {
+					this.className=this.className.replace(" over", "");
+				}
+			}
+		}
+	}
+}
+window.onload=startList;
+
+//--><!]]></script>
+
+</head>
+
+<body>
+
+<div id="logo"><img src="./logo.gif" alt="logo" width="260" height="76" /></div>
+
+<div id="navigation">
+<ul id="nav">
+  <li><a href="#">MENU</a>
+    <ul>
+      <li><a href="#">About LOGO</a></li>
+	  <li><a href="#">Gallery</a></li>
+	  <li><a href="#">Contact Info</a></li>
+     </ul>
+  </li>
+</ul>
+</div>
+
+<div id="content">
+
+<div id="flower">
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" width="150" height="150" id="flower2" align="middle">
+<param name="allowScriptAccess" value="sameDomain" />
+<param name="movie" value="flower.swf" />
+<param name="quality" value="best" />
+<param name="wmode" value="transparent" />
+<param name="bgcolor" value="#a5bf80" />
+<embed src="flower.swf" quality="best" wmode="transparent" bgcolor="#a5bf80" width="150" height="150" name="flower2" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+</object></div>
+
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse libero massa, pellentesque ac, gravida eget, pellentesque nec, orci. Aenean fermentum leo eget odio. Phasellus bibendum lorem bibendum mauris. Fusce ac ante. Nam hendrerit, eros vitae tincidunt viverra, mauris pede ornare orci, eget malesuada enim augue non est. Pellentesque et nulla eu neque pharetra iaculis. Quisque posuere. Cras vitae neque id felis malesuada porttitor. Ut wisi. Sed posuere. Pellentesque ut ante bibendum augue dignissim rhoncus. Vivamus erat. Ut consequat bibendum augue. Phasellus sagittis scelerisque odio. Aenean dictum. Proin sodales congue lorem. Nulla blandit magna a mi.</p></div>
+
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta name="Keywords" content="" />
+<meta name="Description" content="" />
+<title></title>
+<style type="text/css">
+body {font-size:12px;}
+.clipinner {position:relative;}
+.clipboardswf {position:absolute; left:0; top:0;}
+</style>
+</head>
+<input type="text" name="data" value="xxxxx11111" id ="data" />
+<div id="clipboard_content">
+<span class="clipinner" id="clipinner">点此复制到剪贴板
+<embed name="clipboardswf" class="clipboardswf" id="clipboardswf" onmouseover="setcopy_gettext()" devicefont="false" src="./clipboard.swf" menu="false" allowscriptaccess="sameDomain" swliveconnect="true" wmode="transparent" type="application/x-shockwave-flash" height="20" width="100"></span>
+</div>
+
+<script type="text/javascript">
+var clipboardswfdata;
+
+var setcopy_gettext = function(){
+    clipboardswfdata = document.getElementById('data').value;
+//    alert(clipboardswfdata);
+    window.document.clipboardswf.SetVariable('str', clipboardswfdata);
+}
+
+var floatwin = function(){
+    alert('copy success, ' + clipboardswfdata);
+//    document.getElementById('clipinner').style.display = 'none';
+}
+</script>
+</body>
+</html>
