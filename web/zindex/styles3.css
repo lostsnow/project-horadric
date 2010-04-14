@@ -1,0 +1,119 @@
+body {
+	background: #A5BF80 no-repeat right bottom url(images/background_flower.gif);
+	margin: 0px;
+}
+
+#logo {
+	height: 96px;
+	width: 100%;
+	background: #BA002B;
+}
+
+#content {
+	left: 0;
+	margin: 0px;
+	padding: 20px 25px 25px 37px;
+}
+
+#content p {
+	color: #4C5B23;
+	font: 0.9em/1.5em Arial, Helvetica, sans-serif;
+}
+
+#flower {
+	width: 150px;
+	height: 150px;
+	z-index: 1;
+	float: left;
+}
+
+#navigation {
+	height: 30px;
+	width: 100%;
+	background: #BA002B;
+	z-index: 3;
+}
+
+ul {
+	list-style-type: none;
+	border: 0;
+	margin: 0;
+}
+
+ul li a {
+	text-decoration: none;
+	color: #da8578;
+	padding-left: 10px;
+	height: 30px;
+	font: bold 14px/30px Arial, Helvetica, sans-serif;
+}
+
+#nav {
+	padding: 0 0 0 30px;
+}
+
+#nav li {
+	display: block;
+	width: 100px;
+	height: 30px;
+	background-color: #a30031;
+}
+
+#nav li li {	
+	border-bottom: 1px #fff solid;
+}
+
+#nav li li a {
+	padding: 0 5px;
+	margin: 0px;
+	display: block;
+	color: #6C7C49;
+	background-color: #CDDEBB;
+	text-decoration: none;	
+}
+
+#nav li li a:hover {
+	color: #ba002b;
+	background-color: #BDD1A9;
+	text-decoration: none;
+	display: block;
+}
+
+li {
+	position: relative;	
+	float: left;
+}
+ 
+li ul {
+	display: none;
+	position: absolute; 
+	top: 100%;
+	left: 0px;
+	padding: 0;
+	margin: 0;
+}
+
+ul li {
+     display: inline;
+}
+
+li>ul {
+     top: auto;
+     left: auto;
+}
+ 
+li li {
+	display: block;
+	float: none;
+	background-color: transparent;
+	margin: 0;
+	padding: 0;	
+	font: bold 14px/20px Arial, Helvetica, sans-serif;
+}
+
+li:hover ul, li.over ul { 
+	display: block;
+}
+
+
+
