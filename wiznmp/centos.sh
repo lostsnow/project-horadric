@@ -129,7 +129,7 @@ php_fpm_source_dir_name="php-"$php_version"-fpm-"$php_fpm_version
 libiconv_source_dir_name="libiconv-"$libiconv_version
 libmcrypt_source_dir_name="libmcrypt-"$libmcrypt_version
 mcrypt_source_dir_name="mcrypt-"$mcrypt_version
-memcache_source_dir_name="memcached-"$memcached_version
+memcached_source_dir_name="memcached-"$memcached_version
 pecl_memcache_source_dir_name="memcache-"$pecl_memcache_version
 apc_source_dir_name="APC-"$apc_version
 mhash_source_dir_name="mhash-"$mhash_version
@@ -616,6 +616,9 @@ echo "========================memcached intall finished========================"
 fi
 
 echo "===============================php install==============================="
+#rhel 4 ?
+#ln -s /usr/lib/libjpeg.so.62 /usr/lib/libjpeg.so
+#ln -s /usr/lib/libpng.so.3 /usr/lib/libpng.so
 cd $src_dir
 tar zxf $php_tar_gz_name
 gzip -cd $php_fpm_tar_gz_name | patch -d $php_source_dir_name -p1
@@ -785,16 +788,16 @@ net.ipv4.conf.default.send_redirects = 0
 
 # Turn on execshild
 kernel.exec-shield = 1
-kernel.randomize_va_space = 1
+#kernel.randomize_va_space = 1
 
 # Tuen IPv6
-net.ipv6.conf.default.router_solicitations = 0
-net.ipv6.conf.default.accept_ra_rtr_pref = 0
-net.ipv6.conf.default.accept_ra_pinfo = 0
-net.ipv6.conf.default.accept_ra_defrtr = 0
-net.ipv6.conf.default.autoconf = 0
-net.ipv6.conf.default.dad_transmits = 0
-net.ipv6.conf.default.max_addresses = 1
+#net.ipv6.conf.default.router_solicitations = 0
+#net.ipv6.conf.default.accept_ra_rtr_pref = 0
+#net.ipv6.conf.default.accept_ra_pinfo = 0
+#net.ipv6.conf.default.accept_ra_defrtr = 0
+#net.ipv6.conf.default.autoconf = 0
+#net.ipv6.conf.default.dad_transmits = 0
+#net.ipv6.conf.default.max_addresses = 1
 
 # Optimization for port usefor LBs
 # Increase system file descriptor limit
