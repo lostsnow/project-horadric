@@ -173,6 +173,7 @@ yum_source=none
 
 nginx_worker=8
 fcgi_children=128
+memcached_size=512
 
 #---------------------config end---------------------------
 
@@ -555,7 +556,7 @@ chown -R mysql:mysql $mysql_data_dir
 
 tar zxf $mysql_tar_gz_name
 cd $mysql_source_dir_name
-./configure --prefix=$mysql_dir --enable-assembler --with-extra-charsets=complex --enable-thread-safe-client --with-big-tables --with-readline --with-ssl --with-embedded-server --enable-local-infile --with-plugins=innobase --with-pic --with-fast-mutexes --with-client-ldflags=-static --with-mysqld-ldflags=-static --with-partition --with-innodb --without-ndbcluster --with-archive-storage-engine --with-blackhole-storage-engine --with-csv-storage-engine --without-example-storage-engine --with-federated-storage-engine
+./configure --prefix=$mysql_dir --enable-assembler --with-charset=utf8 --with-extra-charsets=complex --enable-thread-safe-client --with-big-tables --with-readline --with-ssl --with-embedded-server --enable-local-infile --with-plugins=innobase --with-pic --with-fast-mutexes --with-client-ldflags=-static --with-mysqld-ldflags=-static --with-partition --with-innodb --without-ndbcluster --with-archive-storage-engine --with-blackhole-storage-engine --with-csv-storage-engine --without-example-storage-engine --with-federated-storage-engine
 make && make install
 chmod +w $mysql_dir
 chown -R mysql:mysql $mysql_dir
@@ -612,6 +613,7 @@ else
 ./configure --prefix=$memcached_dir --with-libevent=$libevent_dir
 fi
 make && make install
+echo "$memcached_dir/bin/memcached -d -m $memcached_size -l 127.0.0.1 -p 11211 -u www" >> /etc/rc.local
 echo "========================memcached intall finished========================"
 fi
 
@@ -853,9 +855,9 @@ $php_dir/sbin/php-fpm start
 $nginx_dir/sbin/nginx
 
 # start memcached
-#if [ "$install_memcached" = "Yes" ]; then
-#    $memcached_dir/bin/memcached -d -m 512 -l 127.0.0.1 -p 11211 -u www
-#fi
+if [ "$install_memcached" = "Yes" ]; then
+    $memcached_dir/bin/memcached -d -m $memcached_size -l 127.0.0.1 -p 11211 -u www
+fi
 
 clear
 echo "========================================================================="
