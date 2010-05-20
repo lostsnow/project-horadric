@@ -87,7 +87,7 @@ else
 fi
 
 #---------------------config start-------------------------
-nginx_version="0.7.65"
+nginx_version="0.8.37"
 php_version="5.2.13"
 mysql_version="5.1.44"
 php_fpm_version="0.5.13"
@@ -157,6 +157,14 @@ PDO_MYSQL_download_url=$base_download_url$PDO_MYSQL_tar_gz_name
 python_download_url=$base_download_url$python_tar_gz_name
 libevent_download_url=$base_download_url$libevent_tar_gz_name
 
+python_setuptools="setuptools-0.6c11-py2.5.egg"
+python_Beaker_tar_gz_name="Beaker-1.3.tar.gz"
+python_Mako_tar_gz_name="Mako-0.3.2.tar.gz"
+
+python_setuptools="setuptools-0.6c11-py2.5.egg"
+python_Beaker_dir_name="Beaker-1.3.tar.gz"
+python_Mako_dir_name="Mako-0.3.2.tar.gz"
+
 nginx_dir="/usr/local/nginx"
 php_dir="/usr/local/php"
 python_dir="/usr/local"
@@ -174,6 +182,8 @@ yum_source=none
 nginx_worker=8
 fcgi_children=128
 memcached_size=512
+
+nginx_extra_args=
 
 #---------------------config end---------------------------
 
@@ -536,7 +546,20 @@ else
 fi
 
 $python_bin_dir/python ez_setup.py
-$python_bin_dir/python $python_bin_dir/easy_install mako
+
+if [ "$sources_from" = "Download from Internet." ]; then
+    $python_bin_dir/python $python_bin_dir/easy_install mako
+else
+    cd $src_dir
+    tar zxf $python_Beaker_tar_gz_name
+    cd $python_Beaker_dir_name
+    $python_bin_dir/python setup.py install
+    cd $src_dir
+    tar zxf $python_Mako_tar_gz_name
+    cd $python_Mako_dir_name
+    $python_bin_dir/python setup.py install
+    cd $cur_dir
+fi
 
 $python_bin_dir/python confnginx.py -n $nginx_dir -l $log_dir -w $web_dir -d $domain -k $nginx_worker
 ngx_conf_dir=$cur_dir/ngx_conf_$domain
@@ -724,7 +747,7 @@ make && make install
 cd $src_dir
 tar zxf $nginx_tar_gz_name
 cd $nginx_source_dir_name
-./configure --user=www --group=www --prefix=$nginx_dir --with-http_stub_status_module --with-http_ssl_module --http-log-path=$log_dir/access.log --error-log-path=$log_dir/error.log
+./configure --user=www --group=www --prefix=$nginx_dir --with-http_stub_status_module --with-http_ssl_module --http-log-path=$log_dir/access.log --error-log-path=$log_dir/error.log $nginx_extra_args
 make && make install
 
 cd $cur_dir
