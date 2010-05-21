@@ -22,10 +22,10 @@ http
     server_tokens off;       # default: on
 
     # Size Limits & Buffer Overflows
-    client_body_buffer_size     1K;     # default: 8k/16k
-    client_header_buffer_size   1k;
-    large_client_header_buffers 2 1k;   # default: 4 4k/8k
-    client_max_body_size        20m;    # default: 1m
+    client_body_buffer_size     16K;     # default: 8k/16k
+    client_header_buffer_size   16k;     # default: 1k
+    large_client_header_buffers 4 16k;   # default: 4 4k/8k
+    client_max_body_size        20m;     # default: 1m
 
     sendfile on;
     tcp_nopush on;
