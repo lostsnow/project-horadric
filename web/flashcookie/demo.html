@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta name="Keywords" content="" />
+<meta name="Description" content="" />
+<title></title>
+<script src="./runeword.js" type="text/javascript"></script>
+<script type="text/javascript">
+Runeword.ready( function(){
+    var cache_name = 'test';
+
+    Runeword.fcache.init();
+
+    Runeword.fcache.handleJS = function () {
+        var d = new Date();
+        Runeword.fcache.set('fcacheflag', d.getTime());
+        var fcookie_val = Runeword.fcache.get(cache_name);
+        var cookie_val = Runeword.cookie.get(cache_name);
+
+        if (fcookie_val != null) {
+            Runeword.cookie.set(cache_name, fcookie_val, 'never', '/');
+        } else if (cookie_val != null) {
+            Runeword.fcache.set(cache_name, cookie_val);
+        }
+    }
+    Runeword.$("t1").onclick = function(){
+            Runeword.fcache.set(cache_name, Runeword.$("txt").value);
+            Runeword.cookie.set(cache_name, Runeword.$("txt").value, 'never', '/');
+            Runeword.$("info").innerHTML = "已写入~";
+            return false;
+    };
+    Runeword.$("t2").onclick = function(){
+        Runeword.$("txt").value = Runeword.fcache.get(cache_name);
+        Runeword.$("info").innerHTML = "读取成功~";
+        return false;
+    };
+    Runeword.$("t3").onclick = function(){
+        Runeword.fcache.remove(cache_name);
+        Runeword.cookie.remove(cache_name);
+        Runeword.$("info").innerHTML = "删除成功~";
+        return false;
+    };
+    Runeword.$("t4").onclick = function(){
+        location.href = location.href;
+        location.reload(true);
+        return false;
+    };
+});
+</script>
+</head>
+<body>
+    <h2>利用flash的SharedObject实现本地存储</h2>
+
+    <textarea autocomplete="off" id="txt" style="width:300px;height:160px"></textarea><br />
+    <div id="info">&nbsp;</div><br />
+    <input id="t2" type="button" value="读取" />&nbsp;&nbsp;
+    <input id="t1" type="button" value="存储" />&nbsp;&nbsp;
+    <input id="t3" type="button" value="删除" />&nbsp;&nbsp;
+    <input id="t4" type="button" value="刷新" />
+    <div>
+
+    </div>
+
+<div id="fcache_dom"></div>
+
+</body>
+</html>
