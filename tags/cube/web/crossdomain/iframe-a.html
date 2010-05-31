@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
+</head>
+<body>
+
+<form id="serverform">
+设置父页面的背景色: <br />
+<select id="pbgcolor">
+    <option value="" selected>选择颜色</option>
+    <option value="white">白色</option>
+    <option value="black">黑色</option>
+    <option value="red">红色</option>
+    <option value="green">绿色</option>
+    <option value="blue">蓝色</option>
+</select>
+<button type="submit" id="pchangecolor">Go!</button>
+</form>
+
+<iframe id="iframe-agent" height="0" width="0" src="http://www.d.com/cd/iframe-agent.html" style="display:none"></iframe>
+
+<script type="text/javascript">
+var hashVal = window.location.hash.substr(1);
+document.body.style.backgroundColor = hashVal;
+
+// iframe cross domain by location.hash
+$("#serverform").submit(function(){
+    var iframeagent = document.getElementById("iframe-agent");
+    iframeagent.src = iframeagent.src.split('#')[0] + "?"
+                    + Math.floor(Math.random() * 10000) +"#" + $("#pbgcolor").val();
+    return false;
+});
+</script>
+</body>
+</html>
