@@ -24,4 +24,11 @@ ${data['ngx_locations']}
         include fcgi.conf;
     }
     % endif
+
+    if ($http_user_agent ~ "MSIE [1-6]\.") {
+        #Must explicitly turns off gzip to prevent Nginx set Vary:Accept-Encoding
+        #which will prevent IE6 from caching anything
+        gzip off;
+        add_header Vary "User-Agent";
+    }
 }

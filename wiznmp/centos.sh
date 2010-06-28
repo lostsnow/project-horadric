@@ -471,7 +471,7 @@ yum -y install freetype freetype-devel libxml2 libxml2-devel zlib zlib-devel
 yum -y install glibc glibc-devel glib2 glib2-devel bzip2 bzip2-devel
 yum -y install ncurses ncurses-devel curl curl-devel e2fsprogs e2fsprogs-devel
 yum -y install krb5 krb5-devel libidn libidn-devel
-yum -y install openssl openssl-devel
+yum -y install openssl openssl-devel openldap openldap-devel nss_ldap openldap-clients openldap-servers
 echo "============update yum source file and update system end================="
 
 echo "=============compile & install required libraries start=================="
@@ -648,7 +648,7 @@ cd $src_dir
 tar zxf $php_tar_gz_name
 gzip -cd $php_fpm_tar_gz_name | patch -d $php_source_dir_name -p1
 cd $php_source_dir_name
-./configure --prefix=$php_dir --with-config-file-path=$php_dir/etc --with-mysql=$mysql_dir --with-mysqli=$mysql_dir/bin/mysql_config --with-iconv-dir=/usr/local --with-freetype-dir --with-jpeg-dir --with-png-dir --with-zlib --with-libxml-dir=/usr --enable-xml --disable-rpath --enable-discard-path --enable-safe-mode --enable-bcmath --enable-shmop --enable-sysvsem --enable-inline-optimization --with-curl --with-curlwrappers --enable-mbregex --enable-fastcgi --enable-fpm --enable-force-cgi-redirect --enable-mbstring --with-mcrypt --with-gd --enable-gd-native-ttf --with-openssl --with-mhash --enable-pcntl --enable-sockets
+./configure --prefix=$php_dir --with-config-file-path=$php_dir/etc --with-mysql=$mysql_dir --with-mysqli=$mysql_dir/bin/mysql_config --with-iconv-dir=/usr/local --with-freetype-dir --with-jpeg-dir --with-png-dir --with-zlib --with-libxml-dir=/usr --enable-xml --disable-rpath --enable-discard-path --enable-safe-mode --enable-bcmath --enable-shmop --enable-sysvsem --enable-inline-optimization --with-curl --with-curlwrappers --enable-mbregex --enable-fastcgi --enable-fpm --enable-force-cgi-redirect --enable-mbstring --with-mcrypt --with-gd --enable-gd-native-ttf --with-openssl --with-mhash --enable-pcntl --enable-sockets --with-ldap --with-ldap-sasl --enable-ftp
 make ZEND_EXTRA_LIBS='-liconv'
 make install
 cp -f php.ini-dist $php_dir/etc/php.ini
