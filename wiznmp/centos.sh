@@ -545,11 +545,11 @@ else
     python_bin_dir=/usr/bin
 fi
 
-$python_bin_dir/python ez_setup.py
-
 if [ "$sources_from" = "Download from Internet." ]; then
+    $python_bin_dir/python ez_setup.py
     $python_bin_dir/python $python_bin_dir/easy_install mako
 else
+    $python_bin_dir/python ez_setup.py $python_setuptools
     cd $src_dir
     tar zxf $python_Beaker_tar_gz_name
     cd $python_Beaker_dir_name
