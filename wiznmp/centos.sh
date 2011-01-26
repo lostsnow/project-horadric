@@ -161,9 +161,8 @@ python_setuptools="setuptools-0.6c11-py2.5.egg"
 python_Beaker_tar_gz_name="Beaker-1.3.tar.gz"
 python_Mako_tar_gz_name="Mako-0.3.2.tar.gz"
 
-python_setuptools="setuptools-0.6c11-py2.5.egg"
-python_Beaker_dir_name="Beaker-1.3.tar.gz"
-python_Mako_dir_name="Mako-0.3.2.tar.gz"
+python_Beaker_dir_name="Beaker-1.3"
+python_Mako_dir_name="Mako-0.3.2"
 
 nginx_dir="/usr/local/nginx"
 php_dir="/usr/local/php"
@@ -549,8 +548,8 @@ if [ "$sources_from" = "Download from Internet." ]; then
     $python_bin_dir/python ez_setup.py
     $python_bin_dir/python $python_bin_dir/easy_install mako
 else
-    $python_bin_dir/python ez_setup.py $python_setuptools
     cd $src_dir
+    $python_bin_dir/python ez_setup.py $python_setuptools
     tar zxf $python_Beaker_tar_gz_name
     cd $python_Beaker_dir_name
     $python_bin_dir/python setup.py install
