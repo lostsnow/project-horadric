@@ -90,13 +90,14 @@ enable-auto-props = yes
 ### '?').  All entries which match will be applied to the file.
 ### Note that auto-props functionality must be enabled, which
 ### is typically done by setting the 'enable-auto-props' option.
-*.c = svn:eol-style=native
-*.cpp = svn:eol-style=native
-*.h = svn:eol-style=native
+* = tsvn:logminisize=5
+*.c = svn:eol-style=native;svn:keywords=Id Reversion Date
+*.cpp = svn:eol-style=native;svn:keywords=Id Reversion Date
+*.h = svn:eol-style=native;svn:keywords=Id Reversion Date
 *.dsp = svn:eol-style=CRLF
 *.dsw = svn:eol-style=CRLF
 *.sh = svn:eol-style=native;svn:executable
-*.txt = svn:eol-style=native
+*.txt = svn:eol-style=native;svn:keywords=Id Reversion Date
 *.png = svn:mime-type=image/png
 *.jpg = svn:mime-type=image/jpeg
 Makefile = svn:eol-style=native
@@ -113,3 +114,4 @@ Makefile = svn:eol-style=native
 *.htm = svn:eol-style=native;svn:keywords=Id Reversion Date
 *.tpl = svn:eol-style=native;svn:keywords=Id Reversion Date
 *.tmpl = svn:eol-style=native;svn:keywords=Id Reversion Date
+*.md = svn:eol-style=native;svn:keywords=Id Reversion Date;svn:mime-type=text/plain
