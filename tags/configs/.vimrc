@@ -4,6 +4,9 @@
 " vim:shiftwidth=4:tabstop=4:expandtab
 "
 " <F2> - 保存 Buffer，并清理当前Buffer 中的行尾空格以及文件尾部的空行
+" <F3> - 打开当前目录文件列表
+" <Leader> = ,
+" <Leader>m - Remove the Windows ^M
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 if v:version < 700
@@ -24,15 +27,25 @@ set nocompatible
 set history=400
 
 " Set to auto read when a file is changed from the outside
-set autoread
+" set autoread
 
-" Have the mouse enabled all the time:
-set mouse=a
-
-" Enable filetype plugin
+" VIM only
 if has("eval")
+    " Have the mouse enabled all the time:
+    set mouse=a
+
+    " Enable filetype plugin
     filetype plugin on
     filetype indent on
+
+    " Change the current working directory whenever you open a file, switch
+    " buffers, delete a buffer or open/close a window.
+    set autochdir
+
+    " Enable folding, I find it very useful
+    set foldenable
+    set foldmethod=syntax               " fold
+    set foldlevel=100                   " 启动vim时不要自动折叠代码
 endif
 
 " Set map leader
@@ -78,8 +91,6 @@ set nobomb
 set encoding=utf-8
 set fileencoding=utf-8
 
-set textwidth=80
-
 set completeopt=longest,menu
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -94,7 +105,7 @@ set tabstop=4
 
 " 整词换行
 set linebreak
-" set textwidth=76
+set textwidth=116
 set formatoptions+=mM
 
 " Auto indent
@@ -106,29 +117,17 @@ set wrap
 " display tab
 set list
 " set listchars=tab:>-,trail:-  " 将制表符显示为'>---',将行尾空格显示为'-'
-set listchars=tab:>\ ,trail:.   " 将制表符显示为'>   '
+set listchars=tab:>\ ,trail:.   " 将制表符显示为'>   ',将行尾空格显示为'.'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files and backup
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Change the current working directory whenever you open a file, switch
-" buffers, delete a buffer or open/close a window.
-set autochdir
 
 " Turn backup off
 set nobackup
 set nowritebackup
 set noswapfile
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Folding
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Enable folding, I find it very useful
-set foldenable
-set foldmethod=syntax               " fold
-set foldlevel=100                   " 启动vim时不要自动折叠代码
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Spell checking
@@ -212,7 +211,7 @@ set hlsearch
 
 
 function! CurDir()
-    let curdir = substitute(getcwd(), '/home/lost', "~/", "g")
+    let curdir = substitute(getcwd(), '/home/lostsnow', "~/", "g")
     return curdir
 endfunction
 
@@ -225,7 +224,6 @@ set statusline+=\ [%{strlen(&ft)?&ft:'none'}, " filetype
 set statusline+=%{&encoding},       " encoding
 set statusline+=%{&fileformat}]     " file format
 set statusline+=\ CWD:%r%{CurDir()}%h
-" set statusline+=\ CWD:%r%{CurDir()}%h
 " set statusline+=%y%r%m%*%=[Line:%l/%L,Column:%c][%p%%]
 set statusline+=%r%m%*%=[Line:%l/%L,Column:%c][%p%%]
 
