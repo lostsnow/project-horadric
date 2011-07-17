@@ -87,21 +87,22 @@ else
 fi
 
 #---------------------config start-------------------------
-nginx_version="0.8.37"
-php_version="5.2.13"
-mysql_version="5.1.44"
-php_fpm_version="0.5.13"
+nginx_version="1.0.4"
+php_version="5.2.17"    # 5.3.6
+mysql_version="5.1.58"  # 5.5.14
+php_fpm_version="0.5.14"  # php<5.3.4
 libiconv_version="1.13.1"
 libmcrypt_version="2.5.8"
 mcrypt_version="2.6.8"
-memcached_version="1.4.4"
-pecl_memcache_version="2.2.5"
-apc_version="3.1.3p1"
+memcached_version="1.4.6"
+pecl_memcache_version="3.0.6"
+pecl_memcached_version="2.0.0b2"
+apc_version="3.1.9"
 mhash_version="0.9.9.9"
-pcre_version="8.01"
+pcre_version="8.12"
 #eaccelerator_version="0.9.5.3"
-PDO_MYSQL_version="1.0.2"
-python_version="2.5.5"
+PDO_MYSQL_version="1.0.2"   # php<
+python_version="2.5.6"  # 2.7.2
 libevent_major_version="1.4"
 libevent_version=$libevent_major_version".13-stable"
 
