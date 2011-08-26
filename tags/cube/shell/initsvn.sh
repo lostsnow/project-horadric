@@ -10,7 +10,9 @@ function msg_exit()
 
 dir_rand=$(dd if=/dev/urandom bs=1 count=4 2>/dev/null | od -t u4 | awk 'NR=1{print $2}')
 
-base_dir="/srv/svn/lostsnow/"
+base_dir="/var/svn/"
+listen=192.168.128.131
+
 echo "Please input project name:"
 read -p "Project name:" projname
 if [ "$projname" = "" ]; then
@@ -26,7 +28,7 @@ fi
 svnadmin create $svnpath
 
 killall svnserve
-svnserve -d -r $base_dir
+svnserve -d --listen-host $listen -r $base_dir
 
 if [ -d $dir_rand ]; then
     msg_exit "Error: directory structure has exist."
@@ -36,5 +38,27 @@ mkdir -p $dir_rand/branches
 mkdir -p $dir_rand/tags
 
 svn import $dir_rand file://$svnpath -m "Initial directory structure."
+
+cat >$svnpath/hooks/pre-commit<<EOF
+#!/bin/sh
+
+export LANG=zh_CN.UTF-8
+
+REPOS="\$1"
+TXN="\$2"
+
+# Make sure that the log message contains some text.
+SVNLOOK=/usr/bin/svnlook
+LOGMSG=\`\$SVNLOOK log -t "\$TXN" "\$REPOS" | grep "[^[:space:]+]" | grep -o "[^ ]\+\( \+[^ ]\+\)*" | wc -c\`
+if [ "\$LOGMSG" -lt 5 ];
+then
+    echo -e "\nEmpty log message not allowed (minsize=5). Commit aborted!" 1>&2
+    exit 1
+fi
+
+exit 0
+You have new mail in /var/spool/mail/root
+
+EOF
 
 rm -rf $dir_rand
