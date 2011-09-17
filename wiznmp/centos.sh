@@ -87,18 +87,16 @@ else
 fi
 
 #---------------------config start-------------------------
-nginx_version="1.0.4"
+nginx_version="1.1.3"
 php_version="5.2.17"    # 5.3.6
 mysql_version="5.1.58"  # 5.5.14
 php_fpm_version="0.5.14"  # php<5.3.4
 libiconv_version="1.13.1"
-libmcrypt_version="2.5.8"
 mcrypt_version="2.6.8"
 memcached_version="1.4.6"
 pecl_memcache_version="3.0.6"
 pecl_memcached_version="2.0.0b2"
 apc_version="3.1.9"
-mhash_version="0.9.9.9"
 pcre_version="8.12"
 #eaccelerator_version="0.9.5.3"
 PDO_MYSQL_version="1.0.2"   # php<
@@ -111,12 +109,10 @@ php_tar_gz_name="php-"$php_version".tar.gz"
 mysql_tar_gz_name="mysql-"$mysql_version".tar.gz"
 php_fpm_tar_gz_name="php-"$php_version"-fpm-"$php_fpm_version".diff.gz"
 libiconv_tar_gz_name="libiconv-"$libiconv_version".tar.gz"
-libmcrypt_tar_gz_name="libmcrypt-"$libmcrypt_version".tar.gz"
 mcrypt_tar_gz_name="mcrypt-"$mcrypt_version".tar.gz"
 memcached_tar_gz_name="memcached-"$memcached_version".tar.gz"
 pecl_memcache_tar_gz_name="memcache-"$pecl_memcache_version".tgz"
 apc_tar_gz_name="APC-"$apc_version".tgz"
-mhash_tar_gz_name="mhash-"$mhash_version".tar.gz"
 pcre_tar_gz_name="pcre-"$pcre_version".tar.gz"
 #eaccelerator_tar_gz_name="eaccelerator-"$eaccelerator_version".tar.bz2"
 PDO_MYSQL_tar_gz_name="PDO_MYSQL-"$PDO_MYSQL_version".tgz"
@@ -128,12 +124,10 @@ php_source_dir_name="php-"$php_version
 mysql_source_dir_name="mysql-"$mysql_version
 php_fpm_source_dir_name="php-"$php_version"-fpm-"$php_fpm_version
 libiconv_source_dir_name="libiconv-"$libiconv_version
-libmcrypt_source_dir_name="libmcrypt-"$libmcrypt_version
 mcrypt_source_dir_name="mcrypt-"$mcrypt_version
 memcached_source_dir_name="memcached-"$memcached_version
 pecl_memcache_source_dir_name="memcache-"$pecl_memcache_version
 apc_source_dir_name="APC-"$apc_version
-mhash_source_dir_name="mhash-"$mhash_version
 pcre_source_dir_name="pcre-"$pcre_version
 #eaccelerator_source_dir_name="eaccelerator-"$eaccelerator_version
 PDO_MYSQL_source_dir_name="PDO_MYSQL-"$PDO_MYSQL_version
@@ -471,6 +465,7 @@ yum -y install freetype freetype-devel libxml2 libxml2-devel zlib zlib-devel
 yum -y install glibc glibc-devel glib2 glib2-devel bzip2 bzip2-devel
 yum -y install ncurses ncurses-devel curl curl-devel e2fsprogs e2fsprogs-devel
 yum -y install krb5 krb5-devel libidn libidn-devel
+yum -y install libmcrypt libmcrypt-devel libmhash libmhash-devel libevent libevent-devel
 yum -y install openssl openssl-devel openldap openldap-devel nss_ldap openldap-clients openldap-servers
 echo "============update yum source file and update system end================="
 
