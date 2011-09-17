@@ -476,6 +476,10 @@ cd $libiconv_source_dir_name
 ./configure --prefix=/usr/local #2> err |tee log
 make && make install
 
+if [ `uname -m` = 'x86_64' ]; then
+ln -s /usr/local/lib/libiconv.so.2 /usr/lib64/libiconv.so.2
+fi
+
 cd $src_dir
 tar zxf $libmcrypt_tar_gz_name
 cd $libmcrypt_source_dir_name
@@ -544,7 +548,6 @@ if [ "$sources_from" = "Download from Internet." ]; then
     $python_bin_dir/python ez_setup.py
     $python_bin_dir/python $python_bin_dir/easy_install mako
 else
-    cd $src_dir
     $python_bin_dir/python ez_setup.py $python_setuptools
     tar zxf $python_Beaker_tar_gz_name
     cd $python_Beaker_dir_name
@@ -692,7 +695,7 @@ apc.num_files_hint = 1000
 apc.optimization = 1
 
 apc.shm_segments = 1
-apc.shm_size = 64
+apc.shm_size = 64M
 
 apc.slam_defense = 0
 apc.max_file_size = 1M
