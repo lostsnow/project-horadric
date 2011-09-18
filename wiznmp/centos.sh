@@ -577,7 +577,7 @@ chown -R mysql:mysql $mysql_data_dir
 
 tar zxf $mysql_tar_gz_name
 cd $mysql_source_dir_name
-./configure --prefix=$mysql_dir --enable-assembler --with-charset=utf8 --with-extra-charsets=complex --enable-thread-safe-client --with-big-tables --with-readline --with-ssl --with-embedded-server --enable-local-infile --with-pic --with-fast-mutexes --with-client-ldflags=-static --with-mysqld-ldflags=-static --with-plugins=innobase --with-plugins=innodb_plugin --with-plugins=partition --with-plugins=archive --with-plugins=blackhole --with-plugins=csv --with-plugins=federated
+./configure --prefix=$mysql_dir --enable-assembler --with-charset=utf8 --with-extra-charsets=complex --enable-thread-safe-client --with-big-tables --with-readline --with-ssl --with-embedded-server --enable-local-infile --with-pic --with-fast-mutexes --with-client-ldflags=-static --with-mysqld-ldflags=-static --with-plugins=all #--with-plugins=innobase,innodb_plugin,partition,archive,blackhole,csv,federated
 make && make install
 chmod +w $mysql_dir
 chown -R mysql:mysql $mysql_dir
