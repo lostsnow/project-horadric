@@ -57,8 +57,6 @@ then
 fi
 
 exit 0
-You have new mail in /var/spool/mail/root
-
 EOF
 
 rm -rf $dir_rand
